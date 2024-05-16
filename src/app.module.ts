@@ -6,6 +6,8 @@ import { SnakeNamingStrategy } from "./snake-naming.strategy";
 
 import { join } from "path";
 import { PermissionsModule } from "./modules/permissions/permissions.module";
+import { User } from "./modules/users/user.entity";
+import { Project } from "./modules/projects/project.entity";
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -18,7 +20,9 @@ import { PermissionsModule } from "./modules/permissions/permissions.module";
       namingStrategy: new SnakeNamingStrategy(),
       logging: true,
       autoLoadEntities: true,
-      entities: [join(__dirname, "./modules/**/*.entity{.ts,.js}")],
+      entities: [User, Project],
+      synchronize: true,
+      // entities: [join(__dirname, "./modules/**/*.entity{.ts,.js}")],
       migrations: [join(__dirname, "./migrations/*{.ts,.js}")],
     }),
     PermissionsModule,
