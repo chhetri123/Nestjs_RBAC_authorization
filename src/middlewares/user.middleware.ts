@@ -1,7 +1,11 @@
-import { NextFunction, Request, Response } from 'express';
+import { NextFunction, Request, Response } from "express";
 
-export function userSetter(req: Request, _res: Response, next: NextFunction): void {
-  const header = req.headers['USER-ID'] as string;
-  req.user.id = header?.toString() || null;
+export function userSetter(
+  req: Request,
+  _res: Response,
+  next: NextFunction
+): void {
+  const header = req.headers["user-id"] as string;
+  req.user = { id: header } || null;
   next();
 }
