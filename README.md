@@ -1,9 +1,4 @@
 # RBAC system with NestJS
-# Project Name
-
-## Introduction
-Brief introduction to the project and its purpose.
-
 ## Table of Contents
 - [App Business Logic](#app-business-logic)
 - [RBAC Scheme](#rbac-scheme)
